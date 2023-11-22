@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "proxy para download de pdf do site cpfl",
   "main": "server.js",
-  "type": "module",
   "engines": {
     "node": "20"
   },
