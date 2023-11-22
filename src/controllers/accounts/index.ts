@@ -6,9 +6,9 @@ import { accountService } from '@/services';
 async function getLinkPdf(request: Request, response: Response)  {
 
   try {
-    const account = await accountService.getLinkPdf();
+    const link = await accountService.getLinkPdf();
 
-    response.status(200).send(account)
+    response.status(200).send(link)
   } catch (error) {
 
     response.status(500).send({ success: false, message: error.message });
