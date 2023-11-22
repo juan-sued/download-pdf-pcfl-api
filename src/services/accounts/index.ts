@@ -10,7 +10,6 @@ async function getLinkPdf(){
 
 
   //verifica e realiza o login
-
   const isNeedLogin: boolean = await page.evaluate(() => {
     return sessionStorage.getItem('userSessionStorage') === null;
 });
@@ -26,11 +25,15 @@ async function getLinkPdf(){
   await page.setViewport({ width: 1200, height: 800 });
   await page.waitForTimeout(3000);
 
+  const TEST_EMAIL : string = process.env.TEST_EMAIL
+
   await page.waitForSelector('input#signInName');
-  await page.type('input#signInName', 'antoniorobertoruzza@gmail.com');
+  await page.type('input#signInName', TEST_EMAIL);
+
+  const TEST_PASSWORD : string = process.env.TEST_PASSWORD
 
   await page.waitForSelector('#password');
-  await page.type('#password', 'Rob1959*');
+  await page.type('#password', TEST_PASSWORD);
 
   await page.waitForSelector('button#next', { visible: true });
   await page.click('button#next');

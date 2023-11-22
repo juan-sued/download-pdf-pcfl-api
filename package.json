@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "ttsc -p tsconfig.build.json",
+    "build": "tspc -p tsconfig.build.json",
     "start": "node ./dist/server.js",
     "dev": "npm run dev:load-envs nodemon tsx -r tsconfig-paths/register ./src/server.ts",
     "dev:load-envs": "dotenv -e .env.development",
@@ -49,10 +49,10 @@
     "eslint": "^8.53.0",
     "nodemon": "^3.0.1",
     "ntl": "^5.1.0",
+    "ts-patch": "^3.0.2",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.1.2",
-    "ttypescript": "^1.5.15",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.2",
     "typescript-transform-paths": "^3.4.6"
   }
 }
